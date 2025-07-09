@@ -1,0 +1,9 @@
+#MISC
+node_modules/
+.env
+.DS_store
+reports/
+results/
+
+# VSCode files
+.vscode/**

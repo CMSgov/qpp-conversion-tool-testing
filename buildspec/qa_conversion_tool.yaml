@@ -1,0 +1,90 @@
+version: 0.2
+
+env:
+  variables:
+    SLACK_COLOR: "good"
+    SLACK_CHANNEL: "qpp-qppa-testing"
+    AWS_DEFAULT_REGION: "us-east-1"
+    ALERT_USER: "!subteam^S07CPS14LV6"
+
+  parameter-store:
+    SLACK_URL: "/slack/qpp-qppa-testing"
+    ACCOUNT_ID: "/global/aws_account"
+
+phases:
+  install:
+    on-failure: CONTINUE
+    runtime-versions:
+      nodejs: 20
+    commands:
+      - node -v
+      - npm -v
+      - aws --version
+      - jq --version
+      - git --version
+
+  pre_build:
+    on-failure: CONTINUE
+    commands:
+      - HOME="."
+      - echo "Checking out main branch..."
+      - git checkout main
+      - echo "Get environment variables..."
+      - aws ssm get-parameter --name /qppa/qa/env --with-decryption --region us-east-1 | jq -r .'Parameter'.'Value' > .env
+      - echo "Checking out to main branch..."
+      - git checkout main
+      - BUILD_URL="https://us-east-1.console.aws.amazon.com/cloudwatch/home?region=us-east-1#logEvent:group=/aws/codebuild/qpp-qa-conversion-tool;stream=${CODEBUILD_LOG_PATH}"
+      - JOB_URL="https://us-east-1.console.aws.amazon.com/codesuite/codebuild/${ACCOUNT_ID}/projects/qpp-qa-conversion-tool/build/${CODEBUILD_BUILD_ID}"
+      - npm install
+      - npm run format
+      - npm run lint
+
+  build:
+    on-failure: CONTINUE
+    commands:
+      - TITLE_JSON="{\"pretext\":\"*QPP Conversion Tool* test results. For build details <${JOB_URL}|click here>\"},"
+      - JOB_FAILURE=0
+      - |
+        if [ $ENV = "non-prod" ]; then
+          echo "Run ping-test to make sure dev is reachable"
+          npm run test:dev; EXITCODE=$?
+          if [ $EXITCODE != 0 ]; then
+            DEV_JSON="{\"text\":\"Skipping \`test:dev\`, cannot reach host.\",\"color\":\"warning\"},"
+          else
+            echo "Run Conversion Tool test suite test:dev"
+            npm run test:dev; EXITCODE=$?
+            if [ $EXITCODE = 0 ]; then
+              DEV_JSON="{\"text\":\"\`test:dev\` passed\",\"color\":\"good\"},"
+            else
+              DEV_JSON="{\"text\":\"\`test:dev\` failed\",\"color\":\"danger\"},"
+              JOB_FAILURE=1
+            fi
+            echo "Send dev report to S3"
+            aws s3 cp ./reports/test-dev*.html s3://qpp-qa-reports-nonprod-${ACCOUNT_ID}-us-east-1/conversion-tool/dev/; EXITCODE=$?
+            if [ $EXITCODE != 0 ]; then
+              DEV_REPORT_JSON="{\"text\":\"\`test:dev\` report failed to upload to S3\",\"color\":\"danger\"},"
+              JOB_FAILURE=1
+            fi
+          fi
+          echo "Run Conversion Tool test suite test:impl"
+          npm run test:impl; EXITCODE=$?
+          if [ $EXITCODE = 0 ]; then
+            IMP_JSON="{\"text\":\"\`test:impl\` passed\",\"color\":\"good\"},"
+          else
+            IMP_JSON="{\"text\":\"\`test:impl\` failed\",\"color\":\"danger\"},"
+            JOB_FAILURE=1
+          fi
+          echo "Send impl report to S3"
+          aws s3 cp ./reports/test-impl*.html s3://qpp-qa-reports-nonprod-${ACCOUNT_ID}-us-east-1/conversion-tool/impl/; EXITCODE=$?
+          if [ $EXITCODE != 0 ]; then
+            IMP_REPORT_JSON=",{\"text\":\"\`test:impl\` report failed to upload to S3\",\"color\":\"danger\"}"
+            JOB_FAILURE=1
+          fi
+        else
+          echo "Environment is not dev/impl/non-prod, so tests are not executed..."
+        fi
+        if [ $JOB_FAILURE = 1 ]; then
+          ALERT_JSON=",{\"text\":\"<${ALERT_USER}> :point_up:\",\"color\":\"warning\"}"
+        fi
+      - curl -X POST --fail --data-urlencode "payload={\"channel\":\"${SLACK_CHANNEL}\",\"attachments\":[${TITLE_JSON}${DEV_JSON}${DEV_REPORT_JSON}${IMP_JSON}${IMP_REPORT_JSON}${ALERT_JSON}]}" ${SLACK_URL}
+      - exit $JOB_FAILURE
