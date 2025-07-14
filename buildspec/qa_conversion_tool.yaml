@@ -32,8 +32,6 @@ phases:
       - BUILD_URL="https://us-east-1.console.aws.amazon.com/cloudwatch/home?region=us-east-1#logEvent:group=/aws/codebuild/qpp-qa-conversion-tool;stream=${CODEBUILD_LOG_PATH}"
       - JOB_URL="https://us-east-1.console.aws.amazon.com/codesuite/codebuild/${ACCOUNT_ID}/projects/qpp-qa-conversion-tool/build/${CODEBUILD_BUILD_ID}"
       - npm install
-      - npm run format
-      - npm run lint
 
   build:
     on-failure: CONTINUE

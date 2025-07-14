@@ -19,7 +19,7 @@ export const uploadQrdaFile = async (filePath: string) => {
     //const qrdaContent = fs.readFileSync(filePath, 'utf-8');
     const formData = new FormData();
     formData.append('file', fs.createReadStream(filePath));
-    const baseUrl = process.env.TEST_ENV === 'IMPL' ? process.env.IMPL_URL : process.env.DEV_URL
+    const baseUrl = process.env.TEST_ENV === 'IMPL' ? process.env.URL_IMP : process.env.URL_DEV
     const apiUrl = `${baseUrl}/api/submissions/converter/`; // TODO-update to support impl and dev
     let headers
     if (process.env.TEST_ENV === 'IMPL') {

@@ -24,9 +24,9 @@ npm install
    - Example configuration based on your current environment:
      ```
      # URLs for different environments
-     DEV_URL=https://dev.qpp.cms.gov
-     IMPL_URL=https://imp.qpp.cms.gov
-     DEVPRE_URL=https://preview.qpp.cms.gov
+     URL_DEV=https://dev.qpp.cms.gov
+     URL_IMP=https://imp.qpp.cms.gov
+     URL_DEVPRE=https://preview.qpp.cms.gov
      
      # Authentication token (replace with your actual token)
      IMPLTOKEN=qpp_auth_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
