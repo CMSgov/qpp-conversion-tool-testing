@@ -29,8 +29,8 @@ phases:
       - HOME="."
       - echo "Get environment variables..."
       - aws ssm get-parameter --name /qppa/qa/env --with-decryption --region us-east-1 | jq -r .'Parameter'.'Value' > .env
-      - BUILD_URL="https://us-east-1.console.aws.amazon.com/cloudwatch/home?region=us-east-1#logEvent:group=/aws/codebuild/qpp-qa-conversion-tool;stream=${CODEBUILD_LOG_PATH}"
-      - JOB_URL="https://us-east-1.console.aws.amazon.com/codesuite/codebuild/${ACCOUNT_ID}/projects/qpp-qa-conversion-tool/build/${CODEBUILD_BUILD_ID}"
+      - BUILD_URL="https://us-east-1.console.aws.amazon.com/cloudwatch/home?region=us-east-1#logEvent:group=/aws/codebuild/qppa-qa-conversion-tool;stream=${CODEBUILD_LOG_PATH}"
+      - JOB_URL="https://us-east-1.console.aws.amazon.com/codesuite/codebuild/${ACCOUNT_ID}/projects/qppa-qa-conversion-tool/build/${CODEBUILD_BUILD_ID}"
       - npm install
 
   build:
@@ -55,7 +55,7 @@ phases:
               JOB_FAILURE=1
             fi
             echo "Send dev report to S3"
-            aws s3 cp ./reports/test-dev*.html s3://qpp-qa-reports-nonprod-${ACCOUNT_ID}-us-east-1/conversion-tool/dev/; EXITCODE=$?
+            aws s3 cp ./reports/test-dev*.html s3://qppa-qa-reports-nonprod-${ACCOUNT_ID}-us-east-1/conversion-tool/dev/; EXITCODE=$?
             if [ $EXITCODE != 0 ]; then
               DEV_REPORT_JSON="{\"text\":\"\`test:dev\` report failed to upload to S3\",\"color\":\"danger\"},"
               JOB_FAILURE=1
@@ -71,7 +71,7 @@ phases:
             JOB_FAILURE=1
           fi
           echo "Send impl report to S3"
-          aws s3 cp ./reports/test-impl*.html s3://qpp-qa-reports-nonprod-${ACCOUNT_ID}-us-east-1/conversion-tool/impl/; EXITCODE=$?
+          aws s3 cp ./reports/test-impl*.html s3://qppa-qa-reports-nonprod-${ACCOUNT_ID}-us-east-1/conversion-tool/impl/; EXITCODE=$?
           if [ $EXITCODE != 0 ]; then
             IMP_REPORT_JSON=",{\"text\":\"\`test:impl\` report failed to upload to S3\",\"color\":\"danger\"}"
             JOB_FAILURE=1
