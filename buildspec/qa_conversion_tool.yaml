@@ -40,29 +40,22 @@ phases:
       - JOB_FAILURE=0
       - |
         if [ $ENV = "non-prod" ]; then
-          echo "Run ping-test to make sure dev is reachable"
+          echo "Run Conversion Tool test suite test:dev"
           npm run test:dev; EXITCODE=$?
-          if [ $EXITCODE != 0 ]; then
-            DEV_JSON="{\"text\":\"Skipping \`test:dev\`, cannot reach host.\",\"color\":\"warning\"},"
+          if [ $EXITCODE = 0 ]; then
+            DEV_JSON="{\"text\":\"\`test:dev\` passed\",\"color\":\"good\"},"
           else
-            echo "Run Conversion Tool test suite test:dev"
-            git checkout -f main
-            npm run test:dev; EXITCODE=$?
-            if [ $EXITCODE = 0 ]; then
-              DEV_JSON="{\"text\":\"\`test:dev\` passed\",\"color\":\"good\"},"
-            else
-              DEV_JSON="{\"text\":\"\`test:dev\` failed\",\"color\":\"danger\"},"
-              JOB_FAILURE=1
-            fi
-            echo "Send dev report to S3"
-            aws s3 cp ./reports/test-dev*.html s3://qppa-qa-reports-nonprod-${ACCOUNT_ID}-us-east-1/conversion-tool/dev/; EXITCODE=$?
-            if [ $EXITCODE != 0 ]; then
-              DEV_REPORT_JSON="{\"text\":\"\`test:dev\` report failed to upload to S3\",\"color\":\"danger\"},"
-              JOB_FAILURE=1
-            fi
+            DEV_JSON="{\"text\":\"\`test:dev\` failed\",\"color\":\"danger\"},"
+            JOB_FAILURE=1
+          fi
+          echo "Send dev report to S3"
+          ls -al
+          aws s3 cp ./reports/test-dev*.html s3://qppa-qa-reports-nonprod-${ACCOUNT_ID}-us-east-1/conversion-tool/dev/; EXITCODE=$?
+          if [ $EXITCODE != 0 ]; then
+            DEV_REPORT_JSON="{\"text\":\"\`test:dev\` report failed to upload to S3\",\"color\":\"danger\"},"
+            JOB_FAILURE=1
           fi
           echo "Run Conversion Tool test suite test:impl"
-          git checkout -f main
           npm run test:impl; EXITCODE=$?
           if [ $EXITCODE = 0 ]; then
             IMP_JSON="{\"text\":\"\`test:impl\` passed\",\"color\":\"good\"},"
@@ -71,16 +64,14 @@ phases:
             JOB_FAILURE=1
           fi
           echo "Send impl report to S3"
+          ls -al
           aws s3 cp ./reports/test-impl*.html s3://qppa-qa-reports-nonprod-${ACCOUNT_ID}-us-east-1/conversion-tool/impl/; EXITCODE=$?
           if [ $EXITCODE != 0 ]; then
             IMP_REPORT_JSON=",{\"text\":\"\`test:impl\` report failed to upload to S3\",\"color\":\"danger\"}"
             JOB_FAILURE=1
           fi
-          if [ $JOB_FAILURE = 1 ]; then
-            ALERT_JSON=",{\"text\":\"<${ALERT_USER}> :point_up:\",\"color\":\"warning\"}"
-          fi
         else
           echo "Environment is not dev/impl/non-prod, so tests are not executed..."
         fi
-      - curl -X POST --fail --data-urlencode "payload={\"channel\":\"${SLACK_CHANNEL}\",\"attachments\":[${TITLE_JSON}${DEV_JSON}${DEV_REPORT_JSON}${IMP_JSON}${IMP_REPORT_JSON}${ALERT_JSON}]}" ${SLACK_URL}
+      - curl -X POST --fail --data-urlencode "payload={\"channel\":\"${SLACK_CHANNEL}\",\"attachments\":[${TITLE_JSON}${DEV_JSON}${DEV_REPORT_JSON}${IMP_JSON}${IMP_REPORT_JSON}]}" ${SLACK_URL}
       - exit $JOB_FAILURE
