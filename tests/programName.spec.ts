@@ -6,7 +6,7 @@ import { expectedProgramName } from '../src/utils/test-records';
 config();
 
 describe("Program name validation per QRDA XML file", () => {
-  const folderPath = path.resolve(__dirname, "../test-data/2025-sample-files/success");
+  const folderPath = path.resolve(__dirname, "../test-data/2025-sample-files");
 
   // beforeAll(() => {
   //   console.log('Running tests with 2025 sample files');
