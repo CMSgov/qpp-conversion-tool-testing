@@ -41,7 +41,7 @@ phases:
       - |
         if [ $ENV = "non-prod" ]; then
           echo "Run ping-test to make sure dev is reachable"
-          npm run ping-test:dev; EXITCODE=$?
+          npm run ping-test; EXITCODE=$?
           if [ $EXITCODE != 0 ]; then
             DEV_JSON="{\"text\":\"Skipping \`conversion-tool:dev\`, cannot reach host.\",\"color\":\"warning\"},"
           else
