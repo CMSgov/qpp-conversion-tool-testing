@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:impl": "TEST_ENV=IMPL jest --runInBand",
-    "test:dev": "TEST_ENV=DEV jest --runInBand",
-    "test:dateFormat": "TEST_ENV=DEV jest --runInBand dateFormat.spec.ts",
-    "test:warnings": "TEST_ENV=DEV jest --runInBand warnings.spec.ts"
+    "conversion-tool:impl": "TEST_ENV=IMPL jest --runInBand",
+    "conversion-tool:dev": "TEST_ENV=DEV jest --runInBand",
+    "conversion-tool:dateFormat": "TEST_ENV=DEV jest --runInBand dateFormat.spec.ts",
+    "conversion-tool:warnings": "TEST_ENV=DEV jest --runInBand warnings.spec.ts",
+    "ping-test": "jest --runInBand tests/ping-test.spec.ts"
   },
   "keywords": [],
   "author": "",
