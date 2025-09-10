@@ -5,7 +5,7 @@ import { config } from 'dotenv';
 import { NPI_REGEX, TIN_REGEX, PERFORMANCE_START_REGEX, PERFORMANCE_END_REGEX } from '../src/utils/regexes';
 
 config();
-const year = parseInt(process.env.CT_YEAR || '2025', 10);
+const year = 2025;
 
 // Test configurations for appPlus program
 const testConfigs = {
@@ -38,21 +38,28 @@ describe('Valid appPlus QRDA files for APM should be successfully converted into
   xmlFiles.forEach((file) => {
     it(`should return 201 for valid appPlus APM file ${file}`, async () => {
       const filePath = path.join(folderPath, file);
-      const response = await uploadQrdaFile(filePath);
-      saveResultJson(file, response.data, 'appPlus_apm');
-      expect(response.status).toBe(201);
-      expect(response.data.qpp).toMatchObject({
-        performanceYear: year,
-        entityType: testConfigs.apm.entityType,
-        entityId: testConfigs.apm.entityIds.default,
-        measurementSets: expect.arrayContaining([
-          expect.objectContaining({ submissionMethod: 'electronicHealthRecord' }),
-          expect.objectContaining({ programName: 'appPlus' }),
-          expect.objectContaining({ performanceStart: expect.stringMatching(PERFORMANCE_START_REGEX) }),
-          expect.objectContaining({ performanceEnd: expect.stringMatching(PERFORMANCE_END_REGEX) }),
-          expect.objectContaining({ source: 'qrda3' })]),
-      });
-      expect(response.data.warnings).toEqual(expect.any(Array));
+      try {
+        const response = await uploadQrdaFile(filePath);
+        saveResultJson(file, response.data, 'appPlus_apm');
+        expect(response.status).toBe(201);
+        expect(response.data.qpp).toMatchObject({
+          performanceYear: year,
+          entityType: testConfigs.apm.entityType,
+          entityId: testConfigs.apm.entityIds.default,
+          measurementSets: expect.arrayContaining([
+            expect.objectContaining({ submissionMethod: 'electronicHealthRecord' }),
+            expect.objectContaining({ programName: 'appPlus' }),
+            expect.objectContaining({ performanceStart: expect.stringMatching(PERFORMANCE_START_REGEX) }),
+            expect.objectContaining({ performanceEnd: expect.stringMatching(PERFORMANCE_END_REGEX) }),
+            expect.objectContaining({ source: 'qrda3' })]),
+        });
+        expect(response.data.warnings).toEqual(expect.any(Array));
+      } catch (error: any) {
+        console.log('IMPL Error Details:');
+        console.log('Status:', error.response?.status);
+        console.log('Data:', JSON.stringify(error.response?.data, null, 2));
+        throw error;
+      }
     });
   });
 });

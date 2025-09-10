@@ -10,13 +10,13 @@ CDA Header
 -->
     <realmCode code="US"/>
     <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
-    <templateId root="2.16.840.1.113883.10.20.27.1.1" extension="2017-06-01"/>
+    <templateId root="2.16.840.1.113883.10.20.27.1.1" extension="2020-12-01"/>
     <templateId root="2.16.840.1.113883.10.20.27.1.2" extension="2024-12-01"/>
     <id root="26a42253-99f5-48e7-9274-b467c6c7f623"/>
     <code code="55184-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
           displayName="Quality Reporting Document Architecture Calculated Summary Report"/>
-    <title>2017 Eligible Clinicians (EC) and Eligible Professionals (EP) Sample QRDA-III</title>
-    <effectiveTime value="20170311061231"/>
+    <title>2025 Eligible Clinicians (EC) and Eligible Professionals (EP) Sample QRDA-III</title>
+    <effectiveTime value="20250311061231"/>
     <confidentialityCode codeSystem="2.16.840.1.113883.5.25" code="N"/>
     <languageCode code="en"/>
     <setId root="ae23711d-783d-4f5e-b942-4084b467848b"/>
@@ -27,7 +27,7 @@ CDA Header
         </patientRole>
     </recordTarget>
     <author>
-        <time value="20170131061231"/>
+        <time value="20250131061231"/>
         <assignedAuthor>
             <id root="3d0a32f3-5164-4a6f-8922-de3badf83de4"/>
             <assignedAuthoringDevice>
@@ -40,7 +40,7 @@ CDA Header
         </assignedAuthor>
     </author>
     <author>
-        <time value="20170131114411"/>
+        <time value="20250131114411"/>
         <assignedAuthor>
             <id root="2.16.840.1.113883.4.6" extension="1234567893" assigningAuthorityName="NPI"/>
             <assignedPerson>
@@ -69,7 +69,7 @@ CDA Header
         </intendedRecipient>
     </informationRecipient>
     <legalAuthenticator>
-        <time value="20170312153222"/>
+        <time value="20250312153222"/>
         <signatureCode code="S"/>
         <assignedEntity>
             <id root="bc01a5d1-3a34-4286-82cc-43eb04c972a7"/>
@@ -81,20 +81,20 @@ CDA Header
     </legalAuthenticator>
     <participant typeCode="DEV">
         <associatedEntity classCode="RGPR">
-            <id root="2.16.840.1.113883.3.2074.1" extension="XX15CXXXXXXXXXX" />
+            <id root="2.16.840.1.113883.3.2074.1" extension="2025C12345678XX" />
             <code code="129465004" displayName="medical record, device" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" />
         </associatedEntity>
     </participant>
     <documentationOf typeCode="DOC">
         <serviceEvent classCode="PCPR">
             <effectiveTime>
-                <low value="20170101"/>
-                <high value="20171231"/>
+                <low value="20250101"/>
+                <high value="20251231"/>
             </effectiveTime>
             <performer typeCode="PRF">
                 <time>
-                    <low value="20170101"/>
-                    <high value="20171231"/>
+                    <low value="20250101"/>
+                    <high value="20251231"/>
                 </time>
                 <assignedEntity>
                     <representedOrganization>
@@ -206,8 +206,8 @@ CDA Header
                                                   displayName="Sex assigned at birth"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="M" codeSystem="2.16.840.1.113883.5.1"
                                                    codeSystemName="AdministrativeGenderCode" displayName="Male"/>
@@ -236,8 +236,8 @@ CDA Header
                                                   displayName="Sex assigned at birth"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="F" codeSystem="2.16.840.1.113883.5.1"
                                                    codeSystemName="AdministrativeGenderCode" displayName="Female"/>
@@ -266,8 +266,8 @@ CDA Header
                                                   displayName="Ethnicity"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="2186-5" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC"
@@ -297,8 +297,8 @@ CDA Header
                                                   displayName="Ethnicity"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="2135-2" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC" displayName="Hispanic or Latino"/>
@@ -327,8 +327,8 @@ CDA Header
                                                   displayName="Race"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="2054-5" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC"
@@ -358,8 +358,8 @@ CDA Header
                                                   displayName="Race"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="2106-3" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC" displayName="White"/>
@@ -388,8 +388,8 @@ CDA Header
                                                   displayName="Race"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="2028-9" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC" displayName="Asian"/>
@@ -418,8 +418,8 @@ CDA Header
                                                   displayName="Race"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="1002-5" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC"
@@ -449,8 +449,8 @@ CDA Header
                                                   displayName="Race"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="2076-8" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC"
@@ -480,8 +480,8 @@ CDA Header
                                                   displayName="Race"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="2131-1" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC" displayName="Other Race"/>
@@ -511,8 +511,8 @@ CDA Header
                                                   displayName="Payment Source"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" nullFlavor="OTH">
                                                 <translation code="A" codeSystem="2.16.840.1.113883.3.249.12"
@@ -544,8 +544,8 @@ CDA Header
                                                   displayName="Payment Source"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" nullFlavor="OTH">
                                                 <translation code="B" codeSystem="2.16.840.1.113883.3.249.12"
@@ -577,8 +577,8 @@ CDA Header
                                                   displayName="Payment Source"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" nullFlavor="OTH">
                                                 <translation code="C" codeSystem="2.16.840.1.113883.3.249.12"
@@ -611,8 +611,8 @@ CDA Header
                                                   displayName="Payment Source"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" nullFlavor="OTH">
                                                 <translation code="D" codeSystem="2.16.840.1.113883.3.249.12"
@@ -674,8 +674,8 @@ CDA Header
                                                   displayName="Sex assigned at birth"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="M" codeSystem="2.16.840.1.113883.5.1"
                                                    codeSystemName="AdministrativeGenderCode" displayName="Male"/>
@@ -704,8 +704,8 @@ CDA Header
                                                   displayName="Sex assigned at birth"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="F" codeSystem="2.16.840.1.113883.5.1"
                                                    codeSystemName="AdministrativeGenderCode" displayName="Female"/>
@@ -734,8 +734,8 @@ CDA Header
                                                   displayName="Ethnicity"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="2186-5" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC"
@@ -765,8 +765,8 @@ CDA Header
                                                   displayName="Ethnicity"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="2135-2" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC" displayName="Hispanic or Latino"/>
@@ -795,8 +795,8 @@ CDA Header
                                                   displayName="Race"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="2054-5" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC"
@@ -826,8 +826,8 @@ CDA Header
                                                   displayName="Race"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="2106-3" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC" displayName="White"/>
@@ -856,8 +856,8 @@ CDA Header
                                                   displayName="Race"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="2028-9" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC" displayName="Asian"/>
@@ -886,8 +886,8 @@ CDA Header
                                                   displayName="Race"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="1002-5" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC"
@@ -917,8 +917,8 @@ CDA Header
                                                   displayName="Race"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="2076-8" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC"
@@ -948,8 +948,8 @@ CDA Header
                                                   displayName="Race"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="2131-1" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC" displayName="Other Race"/>
@@ -979,8 +979,8 @@ CDA Header
                                                   displayName="Payment Source"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" nullFlavor="OTH">
                                                 <translation code="A" codeSystem="2.16.840.1.113883.3.249.12"
@@ -1012,8 +1012,8 @@ CDA Header
                                                   displayName="Payment Source"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" nullFlavor="OTH">
                                                 <translation code="B" codeSystem="2.16.840.1.113883.3.249.12"
@@ -1045,8 +1045,8 @@ CDA Header
                                                   displayName="Payment Source"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" nullFlavor="OTH">
                                                 <translation code="C" codeSystem="2.16.840.1.113883.3.249.12"
@@ -1079,8 +1079,8 @@ CDA Header
                                                   displayName="Payment Source"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" nullFlavor="OTH">
                                                 <translation code="D" codeSystem="2.16.840.1.113883.3.249.12"
@@ -1142,8 +1142,8 @@ CDA Header
                                                   displayName="Sex assigned at birth"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="M" codeSystem="2.16.840.1.113883.5.1"
                                                    codeSystemName="AdministrativeGenderCode" displayName="Male"/>
@@ -1172,8 +1172,8 @@ CDA Header
                                                   displayName="Sex assigned at birth"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="F" codeSystem="2.16.840.1.113883.5.1"
                                                    codeSystemName="AdministrativeGenderCode" displayName="Female"/>
@@ -1202,8 +1202,8 @@ CDA Header
                                                   displayName="Ethnicity"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="2186-5" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC"
@@ -1233,8 +1233,8 @@ CDA Header
                                                   displayName="Ethnicity"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="2135-2" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC" displayName="Hispanic or Latino"/>
@@ -1263,8 +1263,8 @@ CDA Header
                                                   displayName="Race"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="2054-5" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC"
@@ -1294,8 +1294,8 @@ CDA Header
                                                   displayName="Race"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="2106-3" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC" displayName="White"/>
@@ -1324,8 +1324,8 @@ CDA Header
                                                   displayName="Race"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="2028-9" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC" displayName="Asian"/>
@@ -1354,8 +1354,8 @@ CDA Header
                                                   displayName="Race"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="1002-5" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC"
@@ -1385,8 +1385,8 @@ CDA Header
                                                   displayName="Race"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="2076-8" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC"
@@ -1416,8 +1416,8 @@ CDA Header
                                                   displayName="Race"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="2131-1" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC" displayName="Other Race"/>
@@ -1447,8 +1447,8 @@ CDA Header
                                                   displayName="Payment Source"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" nullFlavor="OTH">
                                                 <translation code="A" codeSystem="2.16.840.1.113883.3.249.12"
@@ -1480,8 +1480,8 @@ CDA Header
                                                   displayName="Payment Source"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" nullFlavor="OTH">
                                                 <translation code="B" codeSystem="2.16.840.1.113883.3.249.12"
@@ -1513,8 +1513,8 @@ CDA Header
                                                   displayName="Payment Source"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" nullFlavor="OTH">
                                                 <translation code="C" codeSystem="2.16.840.1.113883.3.249.12"
@@ -1547,8 +1547,8 @@ CDA Header
                                                   displayName="Payment Source"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" nullFlavor="OTH">
                                                 <translation code="D" codeSystem="2.16.840.1.113883.3.249.12"
@@ -1610,8 +1610,8 @@ CDA Header
                                                   displayName="Sex assigned at birth"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="M" codeSystem="2.16.840.1.113883.5.1"
                                                    codeSystemName="AdministrativeGenderCode" displayName="Male"/>
@@ -1640,8 +1640,8 @@ CDA Header
                                                   displayName="Sex assigned at birth"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="F" codeSystem="2.16.840.1.113883.5.1"
                                                    codeSystemName="AdministrativeGenderCode" displayName="Female"/>
@@ -1670,8 +1670,8 @@ CDA Header
                                                   displayName="Ethnicity"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="2186-5" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC"
@@ -1701,8 +1701,8 @@ CDA Header
                                                   displayName="Ethnicity"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="2135-2" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC" displayName="Hispanic or Latino"/>
@@ -1731,8 +1731,8 @@ CDA Header
                                                   displayName="Race"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="2054-5" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC"
@@ -1762,8 +1762,8 @@ CDA Header
                                                   displayName="Race"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="2106-3" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC" displayName="White"/>
@@ -1792,8 +1792,8 @@ CDA Header
                                                   displayName="Race"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="2028-9" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC" displayName="Asian"/>
@@ -1822,8 +1822,8 @@ CDA Header
                                                   displayName="Race"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="1002-5" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC"
@@ -1853,8 +1853,8 @@ CDA Header
                                                   displayName="Race"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="2076-8" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC"
@@ -1884,8 +1884,8 @@ CDA Header
                                                   displayName="Race"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" code="2131-1" codeSystem="2.16.840.1.113883.6.238"
                                                    codeSystemName="Race &amp; Ethnicity - CDC" displayName="Other Race"/>
@@ -1915,8 +1915,8 @@ CDA Header
                                                   displayName="Payment Source"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" nullFlavor="OTH">
                                                 <translation code="A" codeSystem="2.16.840.1.113883.3.249.12"
@@ -1948,8 +1948,8 @@ CDA Header
                                                   displayName="Payment Source"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" nullFlavor="OTH">
                                                 <translation code="B" codeSystem="2.16.840.1.113883.3.249.12"
@@ -1981,8 +1981,8 @@ CDA Header
                                                   displayName="Payment Source"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" nullFlavor="OTH">
                                                 <translation code="C" codeSystem="2.16.840.1.113883.3.249.12"
@@ -2015,8 +2015,8 @@ CDA Header
                                                   displayName="Payment Source"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime>
-                                                <low value="20170101"/>
-                                                <high value="20171231"/>
+                                                <low value="20250101"/>
+                                                <high value="20251231"/>
                                             </effectiveTime>
                                             <value xsi:type="CD" nullFlavor="OTH">
                                                 <translation code="D" codeSystem="2.16.840.1.113883.3.249.12"

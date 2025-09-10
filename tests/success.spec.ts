@@ -5,13 +5,31 @@ import { config } from 'dotenv';
 import { NPI_REGEX, TIN_REGEX, PERFORMANCE_START_REGEX, PERFORMANCE_END_REGEX } from '../src/utils/regexes';
 
 config();
-const year = parseInt(process.env.CT_YEAR || '2025', 10);
-type ApmFileKey = 'PCF-1b' | 'PCF-1d' | 'PCF-28e' | 'default';
+const year = 2025;
+type ApmFileKey = 'MIPS-1b' | 'AppPlus-1b' | 'MIPS-1d' | 'AppPlus-1d' | 'MIPS-28e' | 'AppPlus-28e' | 'MIPS-12d' | 'MIPS-12e' | 'MIPS-12f' | 'MIPS-12g' | 'MIPS-16a' | 'MIPS-16b' | 'MIPS-23a' | 'MIPS-24a' | 'MIPS-24b' | 'MIPS-24c' | 'MIPS-24k' | 'MIPS-24l' | 'MIPS-5b' | 'MIPS-5c' | 'Mvp_Mips-APM-Sample' | 'default';
 
 const apmEntityIds: Record<ApmFileKey, string> = {
-    'PCF-1b': 'CA1028',
-    'PCF-1d': 'CA1196',
-    'PCF-28e': 'AR0437',
+    'MIPS-1b': 'MIPS1001',
+    'AppPlus-1b': 'CA1028',
+    'MIPS-1d': 'MIPS1001',
+    'AppPlus-1d': 'CA1196',
+    'MIPS-28e': 'MIPS1001',
+    'AppPlus-28e': 'AR0437',
+    'MIPS-12d': 'MIPS1001',
+    'MIPS-12e': 'MIPS1001',
+    'MIPS-12f': 'MIPS1001',
+    'MIPS-12g': 'MIPS1001',
+    'MIPS-16a': 'MIPS1001',
+    'MIPS-16b': 'MIPS1001',
+    'MIPS-23a': 'MIPS1001',
+    'MIPS-24a': 'MIPS1001',
+    'MIPS-24b': 'MIPS1001',
+    'MIPS-24c': 'MIPS1001',
+    'MIPS-24k': 'MIPS1001',
+    'MIPS-24l': 'MIPS1001',
+    'MIPS-5b': 'MIPS1001',
+    'MIPS-5c': 'MIPS1001',
+    'Mvp_Mips-APM-Sample': 'MIPS1001',
     'default': 'AR0437'
 };
 

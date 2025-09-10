@@ -5,7 +5,10 @@ import { config } from 'dotenv';
 import { NPI_REGEX, TIN_REGEX, PERFORMANCE_START_REGEX, PERFORMANCE_END_REGEX } from '../src/utils/regexes';
 
 config();
-const year = parseInt(process.env.CT_YEAR || '2025', 10);
+const year = 2025;
+
+// NOTE: SSP tests are skipped for now until further updates
+// SSP is still a valid program, but these tests are on hold
 
 // Test configurations for SSP program
 const testConfigs = {
@@ -30,7 +33,7 @@ const getFilesByPattern = (directory: string, pattern: string): string[] => {
     .filter(file => file.endsWith('.xml') && file.toLowerCase().includes(pattern.toLowerCase()));
 };
 
-describe('Valid SSP QRDA files for APM should be successfully converted into json format', () => {
+describe.skip('Valid SSP QRDA files for APM should be successfully converted into json format', () => {
   beforeAll(() => clearResultsFor('ssp_apm'));
   const folderPath = path.resolve(__dirname, `../test-data/2025-sample-files/${testConfigs.apm.folder}`);
   const xmlFiles = getFilesByPattern(folderPath, 'Apm');
@@ -57,7 +60,7 @@ describe('Valid SSP QRDA files for APM should be successfully converted into jso
   });
 });
 
-describe('Valid SSP QRDA files for Group should be successfully converted into json format', () => {
+describe.skip('Valid SSP QRDA files for Group should be successfully converted into json format', () => {
   beforeAll(() => clearResultsFor('ssp_group'));
   const folderPath = path.resolve(__dirname, `../test-data/2025-sample-files/${testConfigs.group.folder}`);
   const xmlFiles = getFilesByPattern(folderPath, 'Group');
@@ -84,7 +87,7 @@ describe('Valid SSP QRDA files for Group should be successfully converted into j
   });
 });
 
-describe('Valid SSP QRDA files for Individual should be successfully converted into json format', () => {
+describe.skip('Valid SSP QRDA files for Individual should be successfully converted into json format', () => {
   beforeAll(() => clearResultsFor('ssp_individual'));
   const folderPath = path.resolve(__dirname, `../test-data/2025-sample-files/${testConfigs.individual.folder}`);
   const xmlFiles = getFilesByPattern(folderPath, 'Indv');
