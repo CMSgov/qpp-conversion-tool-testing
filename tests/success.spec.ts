@@ -48,7 +48,10 @@ const testConfigs = {
 describe('Valid QRDA files for APM should be successfully converted into json format', () => {
     beforeAll(() => clearResultsFor('apm'));
     const folderApm = path.resolve(__dirname, `../test-data/2025-sample-files/${testConfigs.apm.folder}`);
-    const xmlFilesApm = fs.readdirSync(folderApm).filter(file => file.endsWith('.xml'));
+    const xmlFilesApm = fs.readdirSync(folderApm)
+        .filter(file => file.endsWith('.xml'))
+        .filter(file => !file.includes('_temp.xml'))  // Exclude temporary files
+        .filter(file => !file.includes('_converted.xml'));  // Exclude converted files
     // Test for each XML file
     xmlFilesApm.forEach((file) => {
         it(`should return 201 for valid apm file ${file}`, async () => {
