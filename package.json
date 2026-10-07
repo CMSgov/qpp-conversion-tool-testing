@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "conversion-tool:impl": "TEST_ENV=IMPL jest --runInBand",
-    "conversion-tool:dev": "TEST_ENV=DEV jest --runInBand",
+    "conversion-tool:impl": "TEST_ENV=IMPL jest --runInBand py2026-success.spec.ts",
+    "conversion-tool:dev": "TEST_ENV=DEV jest --runInBand py2026-success.spec.ts",
     "conversion-tool:dateFormat": "TEST_ENV=DEV jest --runInBand dateFormat.spec.ts",
     "conversion-tool:warnings": "TEST_ENV=DEV jest --runInBand warnings.spec.ts",
     "ping-test": "jest --runInBand tests/ping-test.spec.ts"
